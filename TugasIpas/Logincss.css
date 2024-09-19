@@ -7,16 +7,24 @@ body {
 .container {
     display: flex;
     height: 100vh;
+    flex-wrap: wrap;
+    /* Tambahkan untuk membungkus saat layar kecil */
 }
 
 .left-side {
-    background-color: #00209c;
+    background-color: #650073;
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 0 50px 50px 0;
+    padding: 20px;
 }
+
+.logoright{
+    display: none;
+}
+
 
 .right-side {
     flex: 1;
@@ -28,7 +36,8 @@ body {
 }
 
 .login-form {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
 }
 
@@ -63,7 +72,7 @@ body {
 .login-form button {
     width: 100%;
     padding: 10px;
-    background-color: #00209c;
+    background-color: #650073;
     color: white;
     border: none;
     border-radius: 5px;
@@ -79,4 +88,51 @@ body {
     font-size: 12px;
     color: #666;
     margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+        /* Menambah ini untuk memusatkan vertikal */
+        align-items: center;
+        /* Menambah ini untuk memusatkan horizontal */
+    }
+
+    .left-side {
+        display: none;
+    }
+
+    .right-side {
+        height: auto;
+        /* Mengubah agar lebih fleksibel */
+    }
+
+    .logoright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-top: 120px;
+        /* Menambahkan sedikit margin di bawah logo */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .logoright {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .right-side {
+        height: auto;
+    }
 }
